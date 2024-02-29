@@ -277,7 +277,7 @@ missing_varieties <- sort(unique(data_final[is.na(data_final$class),"variety"]))
 
 # We drop observations for the class "Bio" because this class was introduced after 2019 and observations that are not in the list of recommended varieties
 # We continue with the dataset agronomic_data that contains all the relevant information to answer our research questions
-'Allow here yields with NA -> only interested in modelling weather effects on probability of a downgrading'
+#Allow here yields with NA -> only interested in modelling weather effects on probability of a downgrading
 downgrading_data <- data_final[which(!data_final$class %in% c("Bio", "Futterweizen") & !is.na(data_final$class) & !is.na(data_final$sowingDate) & !is.na(data_final$harvestDate) & !is.na(data_final$downgrading)),]
 rm(data_final, missing_varieties, data_classification, data_downgrading)
 
